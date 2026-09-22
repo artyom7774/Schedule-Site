@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Consolas, 'Courier New', monospace;
+    background: #111111;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    padding: 0px 0px 0px 30px;
+}
+
+hr {
+    border: none;
+    margin: 50px 0px 10px 0px;
+    border-top: 1px solid rgb(37, 40, 43);
+}

@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Consolas, 'Courier New', monospace;
+    background: #111111;
+    color: #ffffff;
+}
+
+.main__background {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__background__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+
+.main__background__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.main__background__name {
+    position: relative;
+    margin: 0;
+    padding: 100px 20px 0 20px;
+    font-size: 60px;
+    font-weight: 700;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main__background__description {
+    position: relative;
+    margin: 0;
+    padding: 10px 20px 0 40px;
+    font-size: 24px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}

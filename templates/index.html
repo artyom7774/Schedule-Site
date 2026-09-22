@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="main__background">
+        <div class="main__background__image">
+            <img src="{{ url_for('static', filename='img/bg.jpg') }}">
+        </div>
+        <h3 class="main__background__name">{{name}}</h3>
+        <h4 class="main__background__description">{{description}}</h4>
+    </div>
+</body>
+</html>
