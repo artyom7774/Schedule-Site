@@ -1,16 +1,90 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <div class="main__background">
-        <div class="main__background__image">
-            <img src="{{ url_for('static', filename='img/bg.jpg') }}">
-        </div>
-        <h3 class="main__background__name">{{name}}</h3>
-        <h4 class="main__background__description">{{description}}</h4>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ name[0] }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        %HEADER%
+
+        <main>
+            <h1 class="main__title">{{ name[3][0] }}<span>{{ name[3][1] }}</span>{{ name[3][2] }}</h1>
+            <h2 class="main__subtitle">{{ name[4] }}</h2>
+
+            <div class="main__card">
+                <h3 class="main__card__text">{{ name[3][0] }}<span>{{ name[3][1] }}</span> - программа для быстрого составления расписаний</h3>
+                <h4 class="main__card__subtext">{{ name[3][0] }}{{ name[3][1] }} - современная программа для составления расписания уроков для школ, лицеев и колледжей. Автоматическое составление расписания позволяет создать сложное расписание всего за считанные минуты без конфликтов</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <img src="{{ url_for('static', filename='img/create/algorithm.png') }}" alt="icon" class="main__card__div__element__icon">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Эффективный алгоритм создания расписания</p>
+                            <p class="main__card__div__element__div__subtitle">Программа автоматически распределяет нагрузку без конфликтов за несколько минут</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <img src="{{ url_for('static', filename='img/create/algorithm.png') }}" alt="icon" class="main__card__div__element__icon">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Работа с профильными классами</p>
+                            <p class="main__card__div__element__div__subtitle">Вы можете разделить классы по группам (профилям) и указать предметы, которые они будут проходить</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <img src="{{ url_for('static', filename='img/create/algorithm.png') }}" alt="icon" class="main__card__div__element__icon">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Работа с кабинетами</p>
+                            <p class="main__card__div__element__div__subtitle">Программа позволяет группировать кабинеты и устанавливать их для определённых уроков</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <img src="{{ url_for('static', filename='img/create/algorithm.png') }}" alt="icon" class="main__card__div__element__icon">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Поддержка индвидуального учебного плана</p>
+                            <p class="main__card__div__element__div__subtitle">Вы можете для отдельных учащихся создать комбинированное расписание, сочетая предметы с классом и индивидуальные занятия</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <img src="{{ url_for('static', filename='img/create/algorithm.png') }}" alt="icon" class="main__card__div__element__icon">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Поддержка заморозки уроков</p>
+                            <p class="main__card__div__element__div__subtitle">Вы можете замораживать определённые уроки в нужное время для класса</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <img src="{{ url_for('static', filename='img/create/algorithm.png') }}" alt="icon" class="main__card__div__element__icon">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Работа с большими учебными заведениями</p>
+                            <p class="main__card__div__element__div__subtitle">Программа позволяет создать до 1000 учителей, классов и учебных кабинетов одновременно</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <img src="{{ url_for('static', filename='img/create/algorithm.png') }}" alt="icon" class="main__card__div__element__icon">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">ИИ-ассистент</p>
+                            <p class="main__card__div__element__div__subtitle">ИИ-ассистент, встроенный в программу, позволяет быстро работать и экспортировать данные</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <img src="{{ url_for('static', filename='img/create/algorithm.png') }}" alt="icon" class="main__card__div__element__icon">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Экспорт в Excel</p>
+                            <p class="main__card__div__element__div__subtitle">Программа даёт возможность быстро экспортировать созданное расписание в разных форматах</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        %FOOTER%
+    </body>
 </html>

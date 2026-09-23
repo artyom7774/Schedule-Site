@@ -16,6 +16,10 @@ def write(*args):
     print(line)
 
 
+def load(name):
+    return open(f"templates/{name}", encoding="utf-8").read().replace("%HEADER%", open("templates/header.html", encoding="utf-8").read()).replace("%FOOTER%", open("templates/footer.html", encoding="utf-8").read())
+
+
 @app.route("/log")
 def logger():
     global log
@@ -26,7 +30,7 @@ def logger():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ title }}</title>
+        <title>{{ name[0] }}</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/log.css') }}">
     </head>
     <body>
@@ -40,12 +44,12 @@ def logger():
     </html>
     """
 
-    return render_template_string(text, title=TITLE, log=log)
+    return render_template_string(text, name=NAME, log=log)
 
 
 @app.route("/")
 def site():
-    return render_template("index.html", title=TITLE, name=NAME, description=DESCRIPTION)
+    return render_template_string(load("index.html"), name=NAME)
 
 
 def start():
