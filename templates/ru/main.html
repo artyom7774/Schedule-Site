@@ -14,12 +14,14 @@
             <h2 class="main__subtitle">{{ name[4] }}</h2>
 
             <div class="main__card">
+                <img src="{{ url_for('static', filename='img/background.png') }}" alt="icon" class="main__card__img">
+                
                 <h3 class="main__card__text">{{ name[3][0] }}<span>{{ name[3][1] }}</span> - программа для быстрого составления расписаний</h3>
                 <h4 class="main__card__subtext">{{ name[3][0] }}{{ name[3][1] }} - современная программа для составления расписания уроков для школ, лицеев и колледжей. Автоматическое составление расписания позволяет создать сложное расписание всего за считанные минуты без конфликтов</h4>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
-                        <img src="{{ url_for('static', filename='img/create/algorithm.svg') }}" alt="icon" class="main__card__div__element__icon">
+                        <img src="{{ url_for('static', filename='img/main/algorithm.svg') }}" alt="icon" class="main__card__div__element__icon">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Эффективный алгоритм создания расписания</p>
                             <p class="main__card__div__element__div__subtitle">Программа автоматически распределяет нагрузку без конфликтов за несколько минут</p>
@@ -27,7 +29,7 @@
                     </div>
 
                     <div class="main__card__div__element">
-                        <img src="{{ url_for('static', filename='img/create/classes.svg') }}" alt="icon" class="main__card__div__element__icon">
+                        <img src="{{ url_for('static', filename='img/main/classes.svg') }}" alt="icon" class="main__card__div__element__icon">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Работа с профильными классами</p>
                             <p class="main__card__div__element__div__subtitle">Вы можете разделить классы по группам (профилям) и указать предметы, которые они будут проходить</p>
@@ -35,7 +37,7 @@
                     </div>
 
                     <div class="main__card__div__element">
-                        <img src="{{ url_for('static', filename='img/create/cabinet.svg') }}" alt="icon" class="main__card__div__element__icon">
+                        <img src="{{ url_for('static', filename='img/main/cabinet.svg') }}" alt="icon" class="main__card__div__element__icon">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Работа с кабинетами</p>
                             <p class="main__card__div__element__div__subtitle">Программа позволяет группировать кабинеты и устанавливать их для определённых уроков</p>
@@ -43,7 +45,7 @@
                     </div>
 
                     <div class="main__card__div__element">
-                        <img src="{{ url_for('static', filename='img/create/plan.svg') }}" alt="icon" class="main__card__div__element__icon">
+                        <img src="{{ url_for('static', filename='img/main/plan.svg') }}" alt="icon" class="main__card__div__element__icon">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Поддержка индвидуального учебного плана</p>
                             <p class="main__card__div__element__div__subtitle">Вы можете для отдельных учащихся создать комбинированное расписание, сочетая предметы с классом и индивидуальные занятия</p>
@@ -51,7 +53,7 @@
                     </div>
 
                     <div class="main__card__div__element">
-                        <img src="{{ url_for('static', filename='img/create/freeze.svg') }}" alt="icon" class="main__card__div__element__icon">
+                        <img src="{{ url_for('static', filename='img/main/freeze.svg') }}" alt="icon" class="main__card__div__element__icon">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Поддержка заморозки уроков</p>
                             <p class="main__card__div__element__div__subtitle">Вы можете замораживать определённые уроки в нужное время для класса</p>
@@ -59,7 +61,7 @@
                     </div>
 
                     <div class="main__card__div__element">
-                        <img src="{{ url_for('static', filename='img/create/big.svg') }}" alt="icon" class="main__card__div__element__icon">
+                        <img src="{{ url_for('static', filename='img/main/big.svg') }}" alt="icon" class="main__card__div__element__icon">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Работа с большими учебными заведениями</p>
                             <p class="main__card__div__element__div__subtitle">Программа позволяет создать до 1000 учителей, классов и учебных кабинетов одновременно</p>
@@ -67,7 +69,7 @@
                     </div>
 
                     <div class="main__card__div__element">
-                        <img src="{{ url_for('static', filename='img/create/ai.svg') }}" alt="icon" class="main__card__div__element__icon">
+                        <img src="{{ url_for('static', filename='img/main/ai.svg') }}" alt="icon" class="main__card__div__element__icon">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">ИИ-ассистент</p>
                             <p class="main__card__div__element__div__subtitle">ИИ-ассистент, встроенный в программу, позволяет быстро работать и экспортировать данные</p>
@@ -75,7 +77,7 @@
                     </div>
 
                     <div class="main__card__div__element">
-                        <img src="{{ url_for('static', filename='img/create/export.svg') }}" alt="icon" class="main__card__div__element__icon">
+                        <img src="{{ url_for('static', filename='img/main/export.svg') }}" alt="icon" class="main__card__div__element__icon">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Экспорт в Excel</p>
                             <p class="main__card__div__element__div__subtitle">Программа даёт возможность быстро экспортировать созданное расписание в разных форматах</p>
@@ -88,8 +90,8 @@
                 <h1 class="main__download__title">Создайте расписание за 30 минут</h1>
                 <p class="main__download__subtitle">Я не знаю что тут писать третий раз подряд</p>
                 <div class="main__download__buttons">
-                    <button class="main__download__buttons__button">Скачать бесплатно</button>
-                    <button class="main__download__buttons__button">Документация</button>
+                    <a class="main__download__buttons__button" href="/ru/download">Скачать</a>
+                    <a class="main__download__buttons__button" href="/ru/documentation">Документация</a>
                 </div>
             </div>
         </main>
