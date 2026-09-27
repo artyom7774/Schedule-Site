@@ -6,6 +6,7 @@
 
 html, body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -44,6 +45,14 @@ header {
     overflow-x: auto;
 }
 
+.header__logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #2c3e50;
+    padding: 14px 0;
+    letter-spacing: 0.5px;
+}
+
 .header__tab__button {
     background: none;
     border: none;
@@ -51,10 +60,11 @@ header {
     font-size: 0.95rem;
     font-family: inherit;
     color: #6b7a90;
-    padding: 20px 18px;
+    padding: 14px 18px;
     position: relative;
     transition: color 0.2s ease;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .header__tab__button:hover {
@@ -67,10 +77,11 @@ header {
 }
 
 footer {
-    background: #1a2233;
-    color: #a8b3c4;
+    background: #ffffff;
+    color: #6b7a90;
     padding: 32px 24px;
     margin-top: auto;
+    border-top: 1px solid #e1e5ea;
 }
 
 .footer {
@@ -91,36 +102,17 @@ footer {
 }
 
 .footer__links a {
-    color: #a8b3c4;
+    color: #6b7a90;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .footer__links a:hover {
-    color: #ffffff;
-}
-
-.logo {
-    font-weight: 700;
-    font-size: 1.25rem;
     color: #2c3e50;
-    padding: 18px 0;
-    letter-spacing: 0.5px;
 }
 
 span {
     color: #4a7dff;
-}
-
-.header__tab__button.active::after {
-    content: "";
-    position: absolute;
-    left: 18px;
-    right: 18px;
-    bottom: 0;
-    height: 3px;
-    background: #4a7dff;
-    border-radius: 3px 3px 0 0;
 }
 
 main {
@@ -128,7 +120,7 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 48px 24px 64px;
+    padding: 24px 24px 64px;
 }
 
 .main__title {
@@ -160,7 +152,7 @@ main {
 .main__card__subtext {
     color: #6b7a90;
     font-size: 1.05rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .main__card {
@@ -169,6 +161,17 @@ main {
     border-radius: 12px;
     padding: 28px 32px;
     box-shadow: 0 2px 10px rgba(30, 50, 90, 0.05);
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.main__card__img {
+    display: block;
+    width: calc(100% + 64px);
+    margin: -28px -32px 24px;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+    background: #eef2f7;
 }
 
 .main__card__div {
@@ -200,9 +203,41 @@ main {
 
 }
 
+.main__card__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.main__card__steps__element {
+    padding: 24px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.main__card__steps__element__num {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0.4;
+    margin-bottom: 12px;
+}
+
+.main__card__steps__element__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.main__card__steps__element__subtitle {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
 .main__download {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
 .main__download__title {
@@ -242,6 +277,8 @@ main {
     width: 200px;
     box-shadow: 0 2px 10px rgba(30, 50, 90, 0.05);
     transition: color 0.2s ease;
+
+    text-decoration: none;
 }
 
 .main__download__buttons__button:hover {
@@ -249,12 +286,39 @@ main {
 }
 
 @media (max-width: 600px) {
-    .card {
-        padding: 22px 20px;
-    }
-
     .main__card {
         padding: 28px 16px;
+    }
+
+    .main__card__img {
+        width: calc(100% + 32px);
+        margin: -28px -16px 24px;
+    }
+
+    .main__download__buttons {
+        flex-wrap: wrap;
+    }
+
+    .main__card__steps {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 24px;
+    }
+
+    .main__card__steps__element {
+        padding: 18px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .main__card__steps__element__num {
+        margin-bottom: 6px;
+    }
+
+    .main__card__steps__element__title {
+        margin-bottom: 4px;
     }
 
     .header {
@@ -286,7 +350,7 @@ main {
         flex-wrap: nowrap;
     }
 
-    .logo {
+    .header__logo {
         display: none;
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="$LANGUAGE$">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,7 +72,7 @@
                         <img src="{{ url_for('static', filename='img/main/ai.svg') }}" alt="icon" class="main__card__div__element__icon">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">ИИ-ассистент</p>
-                            <p class="main__card__div__element__div__subtitle">ИИ-ассистент, встроенный в программу, позволяет быстро работать и экспортировать данные</p>
+                            <p class="main__card__div__element__div__subtitle">ИИ-ассистент, встроенный в программу, позволяет быстро работать и импортировать данные</p>
                         </div>
                     </div>
 
@@ -86,12 +86,40 @@
                 </div>
             </div>
 
+            <div class="main__card" style="margin-top: 30px;">
+                <h3 class="main__card__text">Как это работает</h3>
+                <h4 class="main__card__subtext">Три шага, чтобы получить готовое расписание без конфликтов</h4>
+
+                <div class="main__card__steps">
+                    <div class="main__card__steps__element">
+                        <div class="main__card__steps__element__num">01</div>
+
+                        <p class="main__card__steps__element__title">Добавьте данные</p>
+                        <p class="main__card__steps__element__subtitle">Добавьте или импортируйте учителей, классы, кабинеты и нагрузку</p>
+                    </div>
+
+                    <div class="main__card__steps__element">
+                        <div class="main__card__steps__element__num">02</div>
+
+                        <p class="main__card__steps__element__title">Настройте правила</p>
+                        <p class="main__card__steps__element__subtitle">Профили, группы, заморозка уроков и индивидуальные планы</p>
+                    </div>
+
+                    <div class="main__card__steps__element">
+                        <div class="main__card__steps__element__num">03</div>
+
+                        <p class="main__card__steps__element__title">Создайте расписание</p>
+                        <p class="main__card__steps__element__subtitle">Программа сама распределит нагрузку и покажет конфликты</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="main__download">
                 <h1 class="main__download__title">Создайте расписание за 30 минут</h1>
-                <p class="main__download__subtitle">Я не знаю что тут писать третий раз подряд</p>
+                <p class="main__download__subtitle">Установите программу, добавьте данные - и получите готовое расписание уже сегодня</p>
                 <div class="main__download__buttons">
-                    <a class="main__download__buttons__button" href="/ru/download">Скачать</a>
-                    <a class="main__download__buttons__button" href="/ru/documentation">Документация</a>
+                    <a class="main__download__buttons__button" href="/$LANGUAGE$/download">Скачать</a>
+                    <a class="main__download__buttons__button" href="/$LANGUAGE$/documentation">Документация</a>
                 </div>
             </div>
         </main>

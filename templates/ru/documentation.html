@@ -1,10 +1,326 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="$LANGUAGE$">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ name[0] }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        %HEADER%
 
-</body>
+        <main>
+            <h1 class="main__title">{{ name[3][0] }}<span>{{ name[3][1] }}</span> - Документация</h1>
+            <h2 class="main__subtitle">Полная документация по использованию программы</h2>
+
+            <div class="main__card">
+                <h3 class="main__card__text">Начало</h3>
+                <h4 class="main__card__subtext">СуперЗавуч - это инструмент, который помогает организаторам образовательного процесса формировать расписание с учётом множества ограничений: нагрузки учителей, доступности кабинетов, сложности предметов и других параметров</h4>
+
+                <div class="main__card__steps">
+                    <div class="main__card__steps__element">
+                        <div class="main__card__steps__element__num">01</div>
+                        <p class="main__card__steps__element__title">Установите программу</p>
+                        <p class="main__card__steps__element__subtitle">Скачайте последнюю версию приложения и запустите программу</p>
+                    </div>
+                    <div class="main__card__steps__element">
+                        <div class="main__card__steps__element__num">02</div>
+                        <p class="main__card__steps__element__title">Заполните данные</p>
+                        <p class="main__card__steps__element__subtitle">Заполните вкладки последовательно: настройки > классы > кабинеты > учителя</p>
+                    </div>
+                    <div class="main__card__steps__element">
+                        <div class="main__card__steps__element__num">03</div>
+                        <p class="main__card__steps__element__title">Запустите генерацию</p>
+                        <p class="main__card__steps__element__subtitle">Нажмите кнопку "Запуск" и дождитесь построения расписания</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
+                <h3 class="main__card__text">Структура программы</h3>
+                <h4 class="main__card__subtext">Интерфейс разделён на 10 логических вкладок. Работа с проектом идёт последовательно - от базовых настроек до экспорта готового расписания</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <div class="main__card__div__element__div__title">Настройки > Классы > Кабинеты > Учителя > ИИ</div>
+                            <div class="main__card__div__element__div__subtitle">Ввод исходных данных, импорт и редактирование данных с помощью ИИ</div>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <div class="main__card__div__element__div__title">Константы > Группы</div>
+                            <div class="main__card__div__element__div__subtitle">Ввод определённых уроков и создание групп & профилей</div>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <div class="main__card__div__element__div__title">Запуск > Просмотр > Экспорт</div>
+                            <div class="main__card__div__element__div__subtitle">Создание, проверка и экспорт расписания в нужные форматы</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/settings.png') }}" alt="icon" class="main__card__img">
+
+                <h3 class="main__card__text">Настройки</h3>
+                <h4 class="main__card__subtext">В настройках указываются базовые настройки программы</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Базовые настройки</p>
+                            <p class="main__card__div__element__div__subtitle">В настройках указывается количество дней в неделе, уроков в день, количество параллелей, предметов и смен</p>
+                            <p class="main__card__div__element__div__subtitle">Также указывается, сколько уроков первой смены пересекают уроки второй смены</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Учебные предметы</p>
+                            <p class="main__card__div__element__div__subtitle">Для каждого учебного предмета указывается его имя и сложность</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Параллели</p>
+                            <p class="main__card__div__element__div__subtitle">Для параллели указывается количество классов и смена, в которой учится параллель</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/classes.png') }}" alt="icon" class="main__card__img">
+
+                <h3 class="main__card__text">Классы</h3>
+                <h4 class="main__card__subtext">В данном меню для каждого класса определяется сколько раз каждый предмет будет проходить в неделю</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Классы</p>
+                            <p class="main__card__div__element__div__subtitle">Для каждого класса и предмета указывается сколько раз этот предмет проводится в неделю</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/classrooms.png') }}" alt="icon" class="main__card__img">
+
+                <h3 class="main__card__text">Кабинеты</h3>
+                <h4 class="main__card__subtext">В данном меню определяются кабинеты и их группы</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Список групп кабинетов</p>
+                            <p class="main__card__div__element__div__subtitle">Возможность удалять и добавлять группу в список</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Кабинеты</p>
+                            <p class="main__card__div__element__div__subtitle">Для каждой группы определяются кабинеты, входящие в неё</p>
+                            <p class="main__card__div__element__div__subtitle">Можно добавить новый кабинет или выбрать из уже добавленных</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/teachers.png') }}" alt="icon" class="main__card__img">
+
+                <h3 class="main__card__text">Учителя</h3>
+                <h4 class="main__card__subtext">Во вкладке учителей указываются все учителя, их учебные предметы и свободное время</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Список учителей</p>
+                            <p class="main__card__div__element__div__subtitle">Возможность удалять и добавлять учителей в список</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Доступное время для уроков</p>
+                            <p class="main__card__div__element__div__subtitle">Для определённого учителя и смены вы можете выбрать, на каких уроках учитель может работать</p>
+                            <p class="main__card__div__element__div__subtitle">Зелёным цветом указывается, что учитель может проводить урок в данное время</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Учебные предметы</p>
+                            <p class="main__card__div__element__div__subtitle">Для определённого учителя выбираются предметы, которые он будет вести</p>
+                            <p class="main__card__div__element__div__subtitle">Для каждого предмета выбираются классы, в которых данный учитель будет проводить данный урок</p>
+                            <p class="main__card__div__element__div__subtitle"></p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Кабинеты</p>
+                            <p class="main__card__div__element__div__subtitle">Для каждого предмета указывается приоритет групп кабинетов, в которых может проводиться урок</p>
+                            <p class="main__card__div__element__div__subtitle">Также можно указать, что предмет не требует кабинета (он не будет учитываться алгоритмом)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/ai.png') }}" alt="icon" class="main__card__img">
+
+                <h3 class="main__card__text">Искусственный интеллект</h3>
+                <h4 class="main__card__subtext">ИИ-помощник, позволяющий удобно работать с проектом</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Интерфейс</p>
+                            <p class="main__card__div__element__div__subtitle">Интерфейс позволяет общаться с ИИ, давать файлы на обработку</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Возможности</p>
+                            <p class="main__card__div__element__div__subtitle">ИИ может отвечать на вопросы пользователя, вопросы по переданным ему файлам</p>
+                            <p class="main__card__div__element__div__subtitle">По запросу ИИ может импортировать в проект данные из данного файла</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Файлы</p>
+                            <p class="main__card__div__element__div__subtitle">Допустимые форматы файлов, которые может обработать ИИ: .db; .sqlite; .sqlite3; .xlsx; .xls; .txt; .csv; .json; .md; .markdown; .html; .xml; .pdf; .docx</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/constants.png') }}" alt="icon" class="main__card__img">
+
+                <h3 class="main__card__text">Константы</h3>
+                <h4 class="main__card__subtext">С помощью данного меню можно заморозить определённый урок в данное время для класса</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Константы</p>
+                            <p class="main__card__div__element__div__subtitle">Для определённого класса и времени выбирается урок, который должен проводиться в данное время</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/groups.png') }}" alt="icon" class="main__card__img">
+
+                <h3 class="main__card__text">Группы</h3>
+                <h4 class="main__card__subtext">Разделение класса на отдельные группы</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Группы</p>
+                            <p class="main__card__div__element__div__subtitle">Позволяет для каждого класса создать группу. Для каждой группы выбираются предметы, которые будут проводиться для этой группы</p>
+                            <p class="main__card__div__element__div__subtitle">С помощью групп можно создавать профильные классы и работать с индивидуальным обучением</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/run.png') }}" alt="icon" class="main__card__img">
+
+                <h3 class="main__card__text">Запуск</h3>
+                <h4 class="main__card__subtext">Позволяет запустить алгоритм создания расписания</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Алгоритм</p>
+                            <p class="main__card__div__element__div__subtitle">Алгоритм основан на температурном отжиге на графе</p>
+                            <p class="main__card__div__element__div__subtitle">Каждое расписание, созданное алгоритмом, оценивается по ряду критериев, каждый из которых умножается на множитель в левом меню</p>
+                            <p class="main__card__div__element__div__subtitle">Задача алгоритма - минимизировать полученную оценку</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Множители</p>
+                            <p class="main__card__div__element__div__subtitle">Одинаковые уроки - определяет, сколько баллов добавляется при двух и более одинаковых уроках в один день для класса</p>
+                            <p class="main__card__div__element__div__subtitle">Неверное количество уроков по дням - сколько баллов добавляется, если класс имеет неравное количество уроков в разные дни</p>
+                            <p class="main__card__div__element__div__subtitle">Пустые окна в уроках - сколько баллов добавляется за каждый пропуск в расписании <b>класса</b></p>
+                            <p class="main__card__div__element__div__subtitle">Дни по сложности - сколько баллов добавляется, если класс имеет неравномерную сложность уроков в разные дни</p>
+                            <p class="main__card__div__element__div__subtitle">Свободное время учителя - сколько баллов добавляется за каждый пропуск в расписании <b>учителя</b></p>
+                            <p class="main__card__div__element__div__subtitle">Бонус за группу - сколько баллов <b>отнимается</b> за каждый урок с несколькими группами одновременно</p>
+                            <p class="main__card__div__element__div__subtitle">Пересечение уроков по сменам - сколько баллов добавляется за каждое пересечение уроков по сменам в расписании учителя</p>
+                            <p class="main__card__div__element__div__subtitle">Окна в группах - сколько баллов добавляется за каждый урок, где одна из групп не имеет урока, но после имеет ещё уроки</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Запуск</p>
+                            <p class="main__card__div__element__div__subtitle">Программа предупредит об ошибках и неточностях в настройках расписания</p>
+                            <p class="main__card__div__element__div__subtitle">После завершения, вы сможете посмотреть и экспортировать полученное расписание</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/view.png') }}" alt="icon" class="main__card__img">
+
+                <h3 class="main__card__text">Просмотр</h3>
+                <h4 class="main__card__subtext">Отображение составленного расписания</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Просмотр</p>
+                            <p class="main__card__div__element__div__subtitle">Отображение составленного расписания относительно классов и относительно учителей</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/export.png') }}" alt="icon" class="main__card__img">
+
+                <h3 class="main__card__text">Экспорт</h3>
+                <h4 class="main__card__subtext">Экспорт составленного расписания</h4>
+
+                <div class="main__card__div">
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Время проведения уроков</p>
+                            <p class="main__card__div__element__div__subtitle">Для каждой смены и урока вы можете установить время, когда будет проводиться урок</p>
+                        </div>
+                    </div>
+
+                    <div class="main__card__div__element">
+                        <div class="main__card__div__element__div">
+                            <p class="main__card__div__element__div__title">Экспорт</p>
+                            <p class="main__card__div__element__div__subtitle">Вы можете экспортировать расписание относительно классов и относительно учителей в формате .xlsx</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        %FOOTER%
+    </body>
 </html>
