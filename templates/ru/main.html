@@ -4,6 +4,40 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ name[0] }}</title>
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "{{ name[0] }}",
+              "alternateName": "{{ name[3][0] }}{{ name[3][1] }}",
+              "description": "{{ name[3][0] }}{{ name[3][1] }} — современная программа для составления расписания уроков для школ, лицеев и колледжей. Автоматическое составление расписания позволяет создать сложное расписание всего за считанные минуты без конфликтов.",
+              "url": "https://superzavych.pythonanywhere.com/",
+              "downloadUrl": "https://github.com/artyom7774/Schedule/releases/download/v1.0.0/Schedule.zip",
+              "softwareVersion": "1.0.0",
+              "applicationCategory": "EducationalApplication",
+              "applicationSubCategory": "Scheduling Software",
+              "operatingSystem": "Windows 10, Windows 11, Linux",
+              "softwareRequirements": "Windows 10 или Windows 11 (64-bit)",
+              "inLanguage": "ru",
+              "isAccessibleForFree": true,
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "artyom7774",
+                "url": "https://github.com/artyom7774"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "{{ name[0] }}",
+                "url": "https://superzavych.pythonanywhere.com/"
+              }
+            }
+        </script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
