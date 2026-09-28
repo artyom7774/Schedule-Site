@@ -11,13 +11,13 @@
 
         <main>
             <h1 class="main__title">{{ name[3][0] }}<span>{{ name[3][1] }}</span>{{ name[3][2] }}</h1>
-            <h2 class="main__subtitle">{{ name[4] }}</h2>
+            <p class="main__subtitle">{{ name[4] }}</p>
 
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/background.png') }}" alt="icon" class="main__card__img">
                 
-                <h3 class="main__card__text">{{ name[3][0] }}<span>{{ name[3][1] }}</span> - программа для быстрого составления расписаний</h3>
-                <h4 class="main__card__subtext">{{ name[3][0] }}{{ name[3][1] }} - современная программа для составления расписания уроков для школ, лицеев и колледжей. Автоматическое составление расписания позволяет создать сложное расписание всего за считанные минуты без конфликтов</h4>
+                <h2 class="main__card__text">{{ name[3][0] }}<span>{{ name[3][1] }}</span> - программа для быстрого составления расписаний</h2>
+                <p class="main__card__subtext">{{ name[3][0] }}{{ name[3][1] }} - современная программа для составления расписания уроков для школ, лицеев и колледжей. Автоматическое составление расписания позволяет создать сложное расписание всего за считанные минуты без конфликтов</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -87,8 +87,8 @@
             </div>
 
             <div class="main__card" style="margin-top: 30px;">
-                <h3 class="main__card__text">Как это работает</h3>
-                <h4 class="main__card__subtext">Три шага, чтобы получить готовое расписание без конфликтов</h4>
+                <h2 class="main__card__text">Как это работает</h2>
+                <p class="main__card__subtext">Три шага, чтобы получить готовое расписание без конфликтов</p>
 
                 <div class="main__card__steps">
                     <div class="main__card__steps__element">
@@ -117,6 +117,7 @@
             <div class="main__download">
                 <h1 class="main__download__title">Создайте расписание за 30 минут</h1>
                 <p class="main__download__subtitle">Установите программу, добавьте данные - и получите готовое расписание уже сегодня</p>
+
                 <div class="main__download__buttons">
                     <a class="main__download__buttons__button" href="/$LANGUAGE$/download">Скачать</a>
                     <a class="main__download__buttons__button" href="/$LANGUAGE$/documentation">Документация</a>

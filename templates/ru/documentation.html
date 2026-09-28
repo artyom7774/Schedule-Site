@@ -11,25 +11,30 @@
 
         <main>
             <h1 class="main__title">{{ name[3][0] }}<span>{{ name[3][1] }}</span> - Документация</h1>
-            <h2 class="main__subtitle">Полная документация по использованию программы</h2>
+            <p class="main__subtitle">Полная документация по использованию программы</p>
 
             <div class="main__card">
-                <h3 class="main__card__text">Начало</h3>
-                <h4 class="main__card__subtext">СуперЗавуч - это инструмент, который помогает организаторам образовательного процесса формировать расписание с учётом множества ограничений: нагрузки учителей, доступности кабинетов, сложности предметов и других параметров</h4>
+                <h2 class="main__card__text">Начало</h2>
+                <p class="main__card__subtext">СуперЗавуч - это инструмент, который помогает организаторам образовательного процесса формировать расписание с учётом множества ограничений: нагрузки учителей, доступности кабинетов, сложности предметов и других параметров</p>
 
                 <div class="main__card__steps">
                     <div class="main__card__steps__element">
                         <div class="main__card__steps__element__num">01</div>
+
                         <p class="main__card__steps__element__title">Установите программу</p>
                         <p class="main__card__steps__element__subtitle">Скачайте последнюю версию приложения и запустите программу</p>
                     </div>
+
                     <div class="main__card__steps__element">
                         <div class="main__card__steps__element__num">02</div>
+
                         <p class="main__card__steps__element__title">Заполните данные</p>
                         <p class="main__card__steps__element__subtitle">Заполните вкладки последовательно: настройки > классы > кабинеты > учителя</p>
                     </div>
+
                     <div class="main__card__steps__element">
                         <div class="main__card__steps__element__num">03</div>
+
                         <p class="main__card__steps__element__title">Запустите генерацию</p>
                         <p class="main__card__steps__element__subtitle">Нажмите кнопку "Запуск" и дождитесь построения расписания</p>
                     </div>
@@ -37,8 +42,8 @@
             </div>
 
             <div class="main__card">
-                <h3 class="main__card__text">Структура программы</h3>
-                <h4 class="main__card__subtext">Интерфейс разделён на 10 логических вкладок. Работа с проектом идёт последовательно - от базовых настроек до экспорта готового расписания</h4>
+                <h2 class="main__card__text">Структура программы</h2>
+                <p class="main__card__subtext">Интерфейс разделён на 10 логических вкладок. Работа с проектом идёт последовательно - от базовых настроек до экспорта готового расписания</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -67,8 +72,8 @@
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/settings.png') }}" alt="icon" class="main__card__img">
 
-                <h3 class="main__card__text">Настройки</h3>
-                <h4 class="main__card__subtext">В настройках указываются базовые настройки программы</h4>
+                <h2 class="main__card__text">Настройки</h2>
+                <p class="main__card__subtext">В настройках указываются базовые настройки программы</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -98,8 +103,8 @@
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/classes.png') }}" alt="icon" class="main__card__img">
 
-                <h3 class="main__card__text">Классы</h3>
-                <h4 class="main__card__subtext">В данном меню для каждого класса определяется сколько раз каждый предмет будет проходить в неделю</h4>
+                <h2 class="main__card__text">Классы</h2>
+                <p class="main__card__subtext">В данном меню для каждого класса определяется сколько раз каждый предмет будет проходить в неделю</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -114,8 +119,8 @@
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/classrooms.png') }}" alt="icon" class="main__card__img">
 
-                <h3 class="main__card__text">Кабинеты</h3>
-                <h4 class="main__card__subtext">В данном меню определяются кабинеты и их группы</h4>
+                <h2 class="main__card__text">Кабинеты</h2>
+                <p class="main__card__subtext">В данном меню определяются кабинеты и их группы</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -139,8 +144,8 @@
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/teachers.png') }}" alt="icon" class="main__card__img">
 
-                <h3 class="main__card__text">Учителя</h3>
-                <h4 class="main__card__subtext">Во вкладке учителей указываются все учителя, их учебные предметы и свободное время</h4>
+                <h2 class="main__card__text">Учителя</h2>
+                <p class="main__card__subtext">Во вкладке учителей указываются все учителя, их учебные предметы и свободное время</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -180,8 +185,8 @@
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/ai.png') }}" alt="icon" class="main__card__img">
 
-                <h3 class="main__card__text">Искусственный интеллект</h3>
-                <h4 class="main__card__subtext">ИИ-помощник, позволяющий удобно работать с проектом</h4>
+                <h2 class="main__card__text">Искусственный интеллект</h2>
+                <p class="main__card__subtext">ИИ-помощник, позволяющий удобно работать с проектом</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -211,8 +216,8 @@
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/constants.png') }}" alt="icon" class="main__card__img">
 
-                <h3 class="main__card__text">Константы</h3>
-                <h4 class="main__card__subtext">С помощью данного меню можно заморозить определённый урок в данное время для класса</h4>
+                <h2 class="main__card__text">Константы</h2>
+                <p class="main__card__subtext">С помощью данного меню можно заморозить определённый урок в данное время для класса</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -227,8 +232,8 @@
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/groups.png') }}" alt="icon" class="main__card__img">
 
-                <h3 class="main__card__text">Группы</h3>
-                <h4 class="main__card__subtext">Разделение класса на отдельные группы</h4>
+                <h2 class="main__card__text">Группы</h2>
+                <p class="main__card__subtext">Разделение класса на отдельные группы</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -244,8 +249,8 @@
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/run.png') }}" alt="icon" class="main__card__img">
 
-                <h3 class="main__card__text">Запуск</h3>
-                <h4 class="main__card__subtext">Позволяет запустить алгоритм создания расписания</h4>
+                <h2 class="main__card__text">Запуск</h2>
+                <p class="main__card__subtext">Позволяет запустить алгоритм создания расписания</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -284,8 +289,8 @@
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/view.png') }}" alt="icon" class="main__card__img">
 
-                <h3 class="main__card__text">Просмотр</h3>
-                <h4 class="main__card__subtext">Отображение составленного расписания</h4>
+                <h2 class="main__card__text">Просмотр</h2>
+                <p class="main__card__subtext">Отображение составленного расписания</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -300,8 +305,8 @@
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/export.png') }}" alt="icon" class="main__card__img">
 
-                <h3 class="main__card__text">Экспорт</h3>
-                <h4 class="main__card__subtext">Экспорт составленного расписания</h4>
+                <h2 class="main__card__text">Экспорт</h2>
+                <p class="main__card__subtext">Экспорт составленного расписания</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">

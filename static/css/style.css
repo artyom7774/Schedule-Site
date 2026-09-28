@@ -178,6 +178,10 @@ main {
 
 }
 
+.main__card__div ul {
+    margin-left: 24px;
+}
+
 .main__card__div__element {
     display: flex;
     align-items: flex-start;

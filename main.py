@@ -144,9 +144,9 @@ def service(lang):
     return render_template_string(load("service.html", "0"), name=NAME)
 
 
-@app.route("/<lang>/support/")
-def support(lang):
-    return render_template_string(load("support.html", "0"), name=NAME)
+@app.route("/<lang>/community/")
+def community(lang):
+    return render_template_string(load("community.html", "0"), name=NAME)
 
 
 def start():
