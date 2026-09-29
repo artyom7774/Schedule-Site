@@ -139,11 +139,6 @@ def download(lang):
     return render_template_string(load("download.html", "0"), name=NAME)
 
 
-@app.route("/<lang>/service/")
-def service(lang):
-    return render_template_string(load("service.html", "0"), name=NAME)
-
-
 @app.route("/<lang>/community/")
 def community(lang):
     return render_template_string(load("community.html", "0"), name=NAME)
