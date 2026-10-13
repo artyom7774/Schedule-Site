@@ -74,13 +74,13 @@
                 <img src="{{ url_for('static', filename='img/documentation/settings.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Настройки</h2>
-                <p class="main__card__subtext">В настройках указываются базовые настройки программы</p>
+                <p class="main__card__subtext">В меню указываются базовые настройки программы, учебные предметы и параллели</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
                         <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Базовые настройки</p>
-                            <p class="main__card__div__element__div__subtitle">В настройках указывается количество дней в неделе, уроков в день, количество параллелей, предметов и смен</p>
+                            <p class="main__card__div__element__div__title">Настройки</p>
+                            <p class="main__card__div__element__div__subtitle">В настройках указывается количество рабочих дней в неделе, количество уроков в день, количество параллелей, предметов и смен</p>
                             <p class="main__card__div__element__div__subtitle">Также указывается, сколько уроков первой смены пересекают уроки второй смены</p>
                         </div>
                     </div>
@@ -88,14 +88,15 @@
                     <div class="main__card__div__element">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Учебные предметы</p>
-                            <p class="main__card__div__element__div__subtitle">Для каждого учебного предмета указывается его имя и сложность</p>
+                            <p class="main__card__div__element__div__subtitle">В найстройках указываеться количество видов учебных предметов</p>
+                            <p class="main__card__div__element__div__subtitle">Для каждого учебного предмета указывается имя и его относительная сложность</p>
                         </div>
                     </div>
 
                     <div class="main__card__div__element">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Параллели</p>
-                            <p class="main__card__div__element__div__subtitle">Для параллели указывается количество классов и смена, в которой учится параллель</p>
+                            <p class="main__card__div__element__div__subtitle">Для каждой из параллели указываеться сколько классов в ней находиться и смена в которой данная параллель учиться</p>
                         </div>
                     </div>
                 </div>
@@ -105,13 +106,13 @@
                 <img src="{{ url_for('static', filename='img/documentation/classes.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Классы</h2>
-                <p class="main__card__subtext">В данном меню для каждого класса определяется сколько раз каждый предмет будет проходить в неделю</p>
+                <p class="main__card__subtext">В меню для каждого класса определяется сколько раз каждый предмет будет изучаться в неделю</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Классы</p>
-                            <p class="main__card__div__element__div__subtitle">Для каждого класса и предмета указывается сколько раз этот предмет проводится в неделю</p>
+                            <p class="main__card__div__element__div__subtitle">Для класса указываеться, сколько уроков будет проходить в день для каждого предмета</p>
                         </div>
                     </div>
                 </div>
@@ -121,20 +122,20 @@
                 <img src="{{ url_for('static', filename='img/documentation/classrooms.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Кабинеты</h2>
-                <p class="main__card__subtext">В данном меню определяются кабинеты и их группы</p>
+                <p class="main__card__subtext">В меню определяются кабинеты и их группы</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Список групп кабинетов</p>
-                            <p class="main__card__div__element__div__subtitle">Возможность удалять и добавлять группу в список</p>
+                            <p class="main__card__div__element__div__subtitle">Добавление и удаление групп кабинетов</p>
                         </div>
                     </div>
 
                     <div class="main__card__div__element">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Кабинеты</p>
-                            <p class="main__card__div__element__div__subtitle">Для каждой группы определяются кабинеты, входящие в неё</p>
+                            <p class="main__card__div__element__div__subtitle">Для каждой группы добавляются кабинеты, которые будут находиться в данной группе</p>
                             <p class="main__card__div__element__div__subtitle">Можно добавить новый кабинет или выбрать из уже добавленных</p>
                         </div>
                     </div>
@@ -146,20 +147,20 @@
                 <img src="{{ url_for('static', filename='img/documentation/teachers.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Учителя</h2>
-                <p class="main__card__subtext">Во вкладке учителей указываются все учителя, их учебные предметы и свободное время</p>
+                <p class="main__card__subtext">В меню указываются все учителя, их учебные предметы и свободное время</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Список учителей</p>
-                            <p class="main__card__div__element__div__subtitle">Возможность удалять и добавлять учителей в список</p>
+                            <p class="main__card__div__element__div__subtitle">Добавление и удаление учителей из списка</p>
                         </div>
                     </div>
 
                     <div class="main__card__div__element">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Доступное время для уроков</p>
-                            <p class="main__card__div__element__div__subtitle">Для определённого учителя и смены вы можете выбрать, на каких уроках учитель может работать</p>
+                            <p class="main__card__div__element__div__subtitle">Для определённого учителя и смены выбераеться, на каких уроках учитель может работать</p>
                             <p class="main__card__div__element__div__subtitle">Зелёным цветом указывается, что учитель может проводить урок в данное время</p>
                         </div>
                     </div>
@@ -178,6 +179,8 @@
                             <p class="main__card__div__element__div__title">Кабинеты</p>
                             <p class="main__card__div__element__div__subtitle">Для каждого предмета указывается приоритет групп кабинетов, в которых может проводиться урок</p>
                             <p class="main__card__div__element__div__subtitle">Также можно указать, что предмет не требует кабинета (он не будет учитываться алгоритмом)</p>
+                            <p class="main__card__div__element__div__subtitle">Например, можно указать чтобы урок Английского языка проводился в приоритете в соответствующих кабинетах<p>
+                            <p class="main__card__div__element__div__subtitle">Если таких нет то будут выбераться другие кабинеты по заданному приоритету</p>
                         </div>
                     </div>
                 </div>
