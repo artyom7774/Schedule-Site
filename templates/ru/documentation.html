@@ -49,7 +49,7 @@
                 <div class="main__card__div">
                     <div class="main__card__div__element">
                         <div class="main__card__div__element__div">
-                            <div class="main__card__div__element__div__title">Настройки > Классы > Кабинеты > Учителя > ИИ</div>
+                            <div class="main__card__div__element__div__title">Настройки > Классы > Кабинеты > Предметы > Учителя > ИИ</div>
                             <div class="main__card__div__element__div__subtitle">Ввод исходных данных, импорт и редактирование данных с помощью ИИ. Эти вкладки составляют основу всего проекта и требуют наибольшего внимания при первоначальной настройке</div>
                         </div>
                     </div>
@@ -148,6 +148,21 @@
             </div>
 
             <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/subjects.png') }}" alt="icon" class="main__card__img">
+
+                <h2 class="main__card__text">Предметы</h2>
+                <p class="main__card__subtext">В данном меню предметы, которые (не) могут проводиться вместе.</p>
+
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/subjects/subjects.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Предметы</div>
+                        <p class="main__card__widget__text">На пересечении двух предмет указывается, могут ли эти 2 предмета проводится в один день вместе. Красным цветом обозначаются пары уроков, которые не могут быть вместе.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/teachers.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Учителя</h2>
@@ -161,32 +176,27 @@
                     </div>
                 </div>
 
-                <div class="main__card__div">
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Доступное время для уроков</p>
-                            <p class="main__card__div__element__div__subtitle">Для определённого учителя и смены выбирается, на каких уроках учитель может работать, что позволяет учитывать личные пожелания, совмещение с другими местами работы и прочие индивидуальные обстоятельства</p>
-                            <p class="main__card__div__element__div__subtitle">Зелёным цветом указывается, что учитель может проводить урок в данное время, что делает интерфейс максимально наглядным и простым для восприятия</p>
-                        </div>
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/teachers/free.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Доступное время</div>
+                        <p class="main__card__widget__text">Для определённого учителя и смены выбирается, на каких уроках учитель может работать, что позволяет учитывать личные пожелания, совмещение с другими местами работы и прочие индивидуальные обстоятельства. Зелёным цветом указывается, что учитель может проводить урок в данное время, жёлтым - что учитель занят в данный момент но не проводит урок (это не будет считатся как окно учителя).</p>
                     </div>
+                </div>
 
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Учебные предметы</p>
-                            <p class="main__card__div__element__div__subtitle">Для определённого учителя выбираются предметы, которые он будет вести в текущем учебном году</p>
-                            <p class="main__card__div__element__div__subtitle">Для каждого предмета выбираются классы, в которых данный учитель будет проводить данный урок, что позволяет точно смоделировать реальную нагрузку педагога</p>
-                            <p class="main__card__div__element__div__subtitle"></p>
-                        </div>
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/teachers/subjects.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Учебные предметы</div>
+                        <p class="main__card__widget__text">Для определённого учителя выбираются предметы, которые он будет вести в текущем учебном году. Для каждого предмета выбираются классы, в которых данный учитель будет проводить данный урок, что позволяет точно смоделировать реальную нагрузку педагога.</p>
                     </div>
+                </div>
 
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Кабинеты</p>
-                            <p class="main__card__div__element__div__subtitle">Для каждого предмета указывается приоритет групп кабинетов, в которых может проводиться урок, что помогает автоматически учитывать специфику разных дисциплин</p>
-                            <p class="main__card__div__element__div__subtitle">Также можно указать, что предмет не требует кабинета (он не будет учитываться алгоритмом), что особенно удобно для занятий, не привязанных к конкретному помещению</p>
-                            <p class="main__card__div__element__div__subtitle">Например, можно указать, чтобы урок английского языка проводился в приоритете в соответствующих кабинетах<p>
-                            <p class="main__card__div__element__div__subtitle">Если таких кабинетов нет в наличии в нужное время, то будут выбираться другие кабинеты по заданному приоритету, что гарантирует гибкость и устойчивость алгоритма к различным ситуациям</p>
-                        </div>
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/teachers/classrooms.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Кабинеты</div>
+                        <p class="main__card__widget__text">Для каждого предмета указывается приоритет групп кабинетов, в которых может проводиться урок, что помогает автоматически учитывать специфику разных дисциплин. Также можно указать, что предмет не требует кабинета (он не будет учитываться алгоритмом), что особенно удобно для занятий, не привязанных к конкретному помещению. Например, можно указать, чтобы урок английского языка проводился в приоритете в соответствующих кабинетах, eсли таких кабинетов нет в наличии в нужное время, то будут выбираться другие кабинеты по заданному приоритету, что гарантирует гибкость и устойчивость алгоритма к различным ситуациям.</p>
                     </div>
                 </div>
             </div>
@@ -195,29 +205,13 @@
                 <img src="{{ url_for('static', filename='img/documentation/ai.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Искусственный интеллект</h2>
-                <p class="main__card__subtext">ИИ-помощник, позволяющий удобно и быстро работать с проектом, избавляя пользователя от необходимости вручную переносить данные из сторонних документов в программу</p>
+                <p class="main__card__subtext">ИИ-помощник, позволяющий удобно и быстро работать с проектом, избавляя пользователя от необходимости вручную переносить данные из сторонних документов в программу.</p>
 
-                <div class="main__card__div">
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Интерфейс</p>
-                            <p class="main__card__div__element__div__subtitle">Интерфейс позволяет общаться с ИИ в привычном чат-формате, давать файлы на обработку и получать быстрые и понятные ответы на возникающие вопросы</p>
-                        </div>
-                    </div>
-
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Возможности</p>
-                            <p class="main__card__div__element__div__subtitle">ИИ может отвечать на вопросы пользователя, а также на вопросы по переданным ему файлам, помогая быстрее разобраться с особенностями конкретного проекта</p>
-                            <p class="main__card__div__element__div__subtitle">По запросу ИИ может импортировать в проект данные из данного файла, существенно экономя время на рутинном ручном вводе информации</p>
-                        </div>
-                    </div>
-
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Файлы</p>
-                            <p class="main__card__div__element__div__subtitle">Допустимые форматы файлов, которые может обработать ИИ: .db; .sqlite; .sqlite3; .xlsx; .xls; .txt; .csv; .json; .md; .markdown; .html; .xml; .pdf; .docx - такой широкий список форматов позволяет работать практически с любыми исходными данными, какими бы они ни были</p>
-                        </div>
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/ai/ai.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Интерфейс</div>
+                        <p class="main__card__widget__text">Интерфейс позволяет общаться с ИИ в привычном чат-формате, давать файлы на обработку и получать быстрые и понятные ответы на возникающие вопросы. Он может отвечать на вопросы пользователя, а также на вопросы по переданным ему файлам, помогая быстрее разобраться с особенностями конкретного проекта. По запросу ИИ может импортировать в проект данные из данного файла, существенно экономя время на рутинном ручном вводе информации. <br> Допустимые форматы файлов, которые может обработать ИИ: .sqlite; .xlsx; .csv; .json; .md; .html; .xml; .pdf; .docx.</p>
                     </div>
                 </div>
             </div>
