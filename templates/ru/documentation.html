@@ -74,30 +74,37 @@
                 <img src="{{ url_for('static', filename='img/documentation/settings.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Настройки</h2>
-                <p class="main__card__subtext">В данном меню указываются базовые настройки программы, учебные предметы и параллели - фундаментальные параметры, на основе которых будет строиться вся дальнейшая логика работы алгоритма составления расписания</p>
+                <p class="main__card__subtext">В данном меню указываются базовые настройки программы, учебные предметы и параллели - фундаментальные параметры, на основе которых будет строиться вся дальнейшая логика работы алгоритма составления расписания.</p>
 
-                <div class="main__card__div">
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Настройки</p>
-                            <p class="main__card__div__element__div__subtitle">В настройках указывается количество рабочих дней в неделе, количество уроков в день, количество параллелей, предметов и смен - все эти параметры напрямую влияют на то, каким будет итоговое расписание</p>
-                            <p class="main__card__div__element__div__subtitle">Также указывается, сколько уроков первой смены пересекают уроки второй смены, что особенно важно для учебных заведений, работающих в несколько смен</p>
-                        </div>
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/settings/settings.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Настройки</div>
+                        <p class="main__card__widget__text">В настройках указывается количество рабочих дней в неделе, количество уроков в день, количество параллелей, предметов и смен. Также указывается, сколько уроков первой смены пересекают уроки второй смены, что особенно важно для учебных заведений, работающих в несколько смен.</p>
                     </div>
+                </div>
 
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Учебные предметы</p>
-                            <p class="main__card__div__element__div__subtitle">В настройках указывается количество видов учебных предметов, которые будут использоваться в вашем расписании - от основных общеобразовательных дисциплин до факультативных и профильных курсов</p>
-                            <p class="main__card__div__element__div__subtitle">Для каждого учебного предмета указывается имя и его относительная сложность, что позволяет алгоритму равномерно распределять нагрузку в течение недели и избегать перегруженных сложными предметами дней</p>
-                        </div>
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/settings/subjects.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Учебные предметы</div>
+                        <p class="main__card__widget__text">Для каждого учебного предмета указывается имя и его относительная сложность, что позволяет алгоритму равномерно распределять нагрузку в течение недели и избегать перегруженных сложными предметами дней.</p>
                     </div>
+                </div>
 
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Параллели</p>
-                            <p class="main__card__div__element__div__subtitle">Для каждой из параллелей указывается, сколько классов в ней находится и в какую смену данная параллель учится, что позволяет корректно распределить ресурсы школы между всеми учащимися</p>
-                        </div>
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/settings/parallels.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Параллели</div>
+                        <p class="main__card__widget__text">Для каждой из параллелей указывается, сколько классов в ней находится и в какую смену данная параллель учится, что позволяет корректно распределить ресурсы школы между всеми учащимися.</p>
+                    </div>
+                </div>
+
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/settings/shifts.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Смены</div>
+                        <p class="main__card__widget__text">Для каждого номера и буквы классса указывается, в какой смене проводится занятия для этого класса.</p>
                     </div>
                 </div>
             </div>
@@ -106,14 +113,13 @@
                 <img src="{{ url_for('static', filename='img/documentation/classes.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Классы</h2>
-                <p class="main__card__subtext">В данном меню для каждого класса подробно определяется, сколько раз каждый предмет будет изучаться в неделю, что позволяет точно задать учебную программу для любого, даже самого нестандартного класса</p>
+                <p class="main__card__subtext">В данном меню для каждого класса подробно определяется, сколько раз каждый предмет будет изучаться в неделю, что позволяет точно задать учебную программу для любого класса.</p>
 
-                <div class="main__card__div">
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Классы</p>
-                            <p class="main__card__div__element__div__subtitle">Для каждого класса указывается, сколько уроков будет проходить в день для каждого предмета, что даёт полный контроль над недельной учебной нагрузкой учащихся</p>
-                        </div>
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/classes/classes.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Классы</div>
+                        <p class="main__card__widget__text">Для каждого класса указывается, сколько уроков будет проходить в день для каждого предмета, что даёт полный контроль над недельной учебной нагрузкой учащихся</p>
                     </div>
                 </div>
             </div>
@@ -122,21 +128,21 @@
                 <img src="{{ url_for('static', filename='img/documentation/classrooms.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Кабинеты</h2>
-                <p class="main__card__subtext">В данном меню определяются кабинеты и их группы - важнейший блок настроек, без которого алгоритм не сможет корректно распределить занятия по доступным аудиториям</p>
+                <p class="main__card__subtext">В данном меню определяются кабинеты и их группы.</p>
 
-                <div class="main__card__div">
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Список групп кабинетов</p>
-                            <p class="main__card__div__element__div__subtitle">Добавление и удаление групп кабинетов, объединённых по общему назначению - например, кабинеты информатики, спортивные залы или лаборатории</p>
-                        </div>
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/classrooms/groups.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Группы кабинетов</div>
+                        <p class="main__card__widget__text">Создание групп кабинетов, для каждой группы указываются список кабинетов, которые находятся в этой группе. Например группа кабинетов информатики или группа кабинетов физики.</p>
                     </div>
+                </div>
 
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Кабинеты</p>
-                            <p class="main__card__div__element__div__subtitle">Для каждой группы добавляются кабинеты, которые будут находиться в данной группе, что позволяет гибко структурировать всё пространство учебного заведения. Можно добавить новый кабинет или выбрать из уже добавленных ранее, что значительно ускоряет процесс настройки при большом количестве аудиторий</p>
-                        </div>
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/classrooms/classrooms.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Кабинеты</div>
+                        <p class="main__card__widget__text">Для каждой группы добавляются кабинеты, которые будут находиться в данной группе, что позволяет гибко структурировать всё пространство учебного заведения. Можно добавить новый кабинет или выбрать из уже добавленных ранее.</p>
                     </div>
                 </div>
             </div>
@@ -145,16 +151,17 @@
                 <img src="{{ url_for('static', filename='img/documentation/teachers.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Учителя</h2>
-                <p class="main__card__subtext">В данном меню указываются все учителя, их учебные предметы и свободное время - пожалуй, самый объёмный и ответственный раздел всей программы, от качества заполнения которого напрямую зависит итоговый результат</p>
+                <p class="main__card__subtext">В данном меню указываются все учителя, их учебные предметы и свободное время.</p>
+
+                <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/teachers/list.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Список учителей</div>
+                        <p class="main__card__widget__text">Добавление и удаление учителей из общего списка педагогического состава.</p>
+                    </div>
+                </div>
 
                 <div class="main__card__div">
-                    <div class="main__card__div__element">
-                        <div class="main__card__div__element__div">
-                            <p class="main__card__div__element__div__title">Список учителей</p>
-                            <p class="main__card__div__element__div__subtitle">Добавление и удаление учителей из общего списка педагогического состава учебного заведения</p>
-                        </div>
-                    </div>
-
                     <div class="main__card__div__element">
                         <div class="main__card__div__element__div">
                             <p class="main__card__div__element__div__title">Доступное время для уроков</p>
