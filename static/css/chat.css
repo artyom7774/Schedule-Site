@@ -1,0 +1,130 @@
+.main__card--chat {
+    display: flex;
+    flex-direction: column;
+    height: min(70vh, 640px);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+}
+
+.chat__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chat__msg {
+    display: flex;
+    max-width: 80%;
+}
+
+.chat__msg--user {
+    align-self: flex-end;
+}
+
+.chat__msg--ai {
+    align-self: flex-start;
+}
+
+.chat__bubble {
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.chat__msg--user .chat__bubble {
+    background: #4a7dff;
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+}
+
+.chat__msg--ai .chat__bubble {
+    background: #f4f6f9;
+    color: #2c3e50;
+    border: 1px solid #e6eaf0;
+    border-bottom-left-radius: 4px;
+}
+
+.chat__composer {
+    display: flex;
+    gap: 10px;
+    padding: 16px 20px;
+    border-top: 1px solid #e6eaf0;
+    background: #ffffff;
+}
+
+.chat__input {
+    flex: 1;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #2c3e50;
+    background: #f4f6f9;
+    border: 1px solid #e1e5ea;
+    border-radius: 10px;
+    padding: 10px 14px;
+    outline: none;
+    resize: none;
+    max-height: 140px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    overflow: hidden;
+}
+
+.chat__input::placeholder {
+    color: #6b7a90;
+}
+
+.chat__input:focus {
+    border-color: #4a7dff;
+    background: #ffffff;
+}
+
+.chat__send {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: #4a7dff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.chat__send:hover:not(:disabled) {
+    background: #3a6ae6;
+}
+
+.chat__send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    .main__card--chat {
+        height: min(75vh, 600px);
+    }
+
+    .chat__body {
+        padding: 16px;
+    }
+
+    .chat__msg {
+        max-width: 90%;
+    }
+
+    .chat__composer {
+        padding: 12px;
+    }
+}

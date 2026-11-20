@@ -1,0 +1,51 @@
+[
+    {
+        "name": "X. Базовая информация о программе и её использованию",
+        "get": [
+            "file",
+            "files/base.txt"
+        ]
+    },
+    {
+        "name": "X. Документация о меню и их использованию",
+        "get": [
+            "file",
+            "files/menu.txt"
+        ]
+    },
+    {
+        "name": "X. Алгоритм и его реализация",
+        "get": [
+            "file",
+            "files/algorithm.txt"
+        ]
+    },
+    {
+        "name": "X. Полная документация о программе и их меню",
+        "get": [
+            "file",
+            "templates/ru/documentation.html"
+        ]
+    },
+    {
+        "name": "X. Код реализации алгоритма составления расписания",
+        "get": [
+            "download",
+            "https://raw.githubusercontent.com/artyom7774/Schedule/main/src/modules/solve.cpp"
+        ]
+    },
+    {
+        "name": "X. README.md из GitHub репозитория",
+        "get": [
+            "download",
+            "https://raw.githubusercontent.com/artyom7774/Schedule/main/README.md"
+        ]
+    },
+    {
+        "name": "X. Статья на Habr",
+        "get": [
+            "file",
+            "files/habr.txt"
+        ]
+    }
+]

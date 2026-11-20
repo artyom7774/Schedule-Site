@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify, render_template_string, render_template, g, redirect, url_for, abort
 
-from src.variables import *
+from src.chat import requestAI
 
+import requests
+import json
 import os
 
 app = Flask(__name__)
@@ -15,6 +17,13 @@ cookies = {
         "support": ["ru"],
         "time": 10 * 60 * 60 * 24 * 365
     }
+}
+
+files = json.load(open("files.json", "r", encoding="utf-8"))
+
+prompts = {
+    "base": open("prompts/base.txt", "r", encoding="utf-8").read(),
+    "request": open("prompts/request.txt", "r", encoding="utf-8").read()
 }
 
 
@@ -102,7 +111,7 @@ def logger():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ name[0] }}</title>
+        <title>СуперЗавуч</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/log.css') }}">
     </head>
     <body>
@@ -116,7 +125,7 @@ def logger():
     </html>
     """
 
-    return render_template_string(text, name=NAME, log=log)
+    return render_template_string(text, log=log)
 
 
 @app.route("/")
@@ -126,22 +135,85 @@ def index():
 
 @app.route("/<lang>/")
 def main(lang):
-    return render_template_string(load("main.html", "0"), name=NAME)
+    return render_template_string(load("main.html", "0"))
 
 
 @app.route("/<lang>/documentation/")
 def documentation(lang):
-    return render_template_string(load("documentation.html", "0"), name=NAME)
+    return render_template_string(load("documentation.html", "0"))
 
 
 @app.route("/<lang>/download/")
 def download(lang):
-    return render_template_string(load("download.html", "0"), name=NAME)
+    return render_template_string(load("download.html", "0"))
 
 
 @app.route("/<lang>/community/")
 def community(lang):
-    return render_template_string(load("community.html", "0"), name=NAME)
+    return render_template_string(load("community.html", "0"))
+
+
+def question(message, history=None):
+    history = history or []
+
+    text = ""
+
+    for element in history:
+        text += element["role"] + ": " + element["content"]
+
+    history = text + "\n" + message
+
+    links = ""
+
+    for i, file in enumerate(files):
+        links += f"{file['name'].replace('X', str(i), 1)}\n"
+
+    indexes = requestAI(prompts["request"].replace("%HISTORY%", history).replace("%MESSAGE%", message).replace("%LINKS%", links))
+
+    assert indexes[0] == 0
+
+    print(">", *list(map(int, indexes[1].split())))
+
+    indexes = indexes[1]
+
+    text = ""
+
+    for index in list(map(int, indexes.split())):
+        text += f"------------------------------ {files[index]['name'].replace('X', str(index), 1)} ------------------------------\n"
+
+        if "value" not in files[index]:
+            if files[index]["get"][0] == "file":
+                files[index]["value"] = open(files[index]["get"][1], "r", encoding="utf-8").read()
+
+            if files[index]["get"][0] == "download":
+                files[index]["value"] = requests.get(files[index]["get"][1]).text
+
+        text += files[index]["value"] + "\n"
+
+    responce = prompts["base"].replace("%HISTORY%", history).replace("%MESSAGE%", message).replace("%FILES%", text)
+
+    return requestAI(responce)[1]
+
+
+@app.route("/api/chat", methods=["POST"])
+def chat():
+    data = request.get_json(silent=True) or {}
+
+    message = (data.get("message") or "").strip()
+    history = data.get("history") or []
+
+    if not isinstance(history, list):
+        history = []
+
+    history = [element for element in history if isinstance(element, dict) and element.get("role") in ("user", "assistant") and isinstance(element.get("content"), str)]
+
+    try:
+        reply = question(message, history)
+
+    except Exception as e:
+        return jsonify({"error": f"{e}"}), 500
+
+    return jsonify({"reply": reply})
 
 
 def start():

@@ -3,15 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ name[0] }}</title>
+        <title>СуперЗавуч: генератор расписаний</title>
         <link rel="icon" href="{{ url_for('static', filename='img/icon.ico') }}" sizes="any">
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "SoftwareApplication",
-                "name": "{{ name[0] }}",
-                "alternateName": "{{ name[3][0] }}{{ name[3][1] }}",
-                "description": "{{ name[3][0] }}{{ name[3][1] }} - современная программа для составления расписания уроков для школ, лицеев и колледжей. Автоматическое составление расписания позволяет создать сложное расписание всего за считанные минуты без конфликтов.",
+                "name": "СуперЗавуч: генератор расписаний",
+                "alternateName": "СуперЗавуч",
+                "description": "СуперЗавуч - современная программа для составления расписания уроков для школ, лицеев и колледжей. Автоматическое составление расписания позволяет создать сложное расписание всего за считанные минуты без конфликтов.",
                 "url": "https://superzavych.pythonanywhere.com/",
                 "downloadUrl": "https://github.com/artyom7774/Schedule/releases/latest/download/Schedule.zip",
                 "softwareVersion": "1.0.0",
@@ -34,25 +34,26 @@
                 },
                 "publisher": {
                     "@type": "Organization",
-                    "name": "{{ name[0] }}",
+                    "name": "СуперЗавуч: генератор расписаний",
                     "url": "https://superzavych.pythonanywhere.com/"
                 }
             }
         </script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
     </head>
     <body>
         %HEADER%
 
         <main>
-            <h1 class="main__title">{{ name[3][0] }}<span>{{ name[3][1] }}</span>{{ name[3][2] }}</h1>
-            <p class="main__subtitle">{{ name[4] }}</p>
+            <h1 class="main__title">Супер<span>Завуч</span> - Ваш цифровой ассистент по автоматическому составлению расписаний</h1>
+            <p class="main__subtitle">Автоматическое составление расписания - просто и надёжно</p>
 
             <div class="main__card">
                 <img src="{{ url_for('static', filename='img/background.png') }}" alt="icon" class="main__card__img">
                 
-                <h2 class="main__card__text">{{ name[3][0] }}<span>{{ name[3][1] }}</span> - программа для быстрого составления расписаний</h2>
-                <p class="main__card__subtext">{{ name[3][0] }}{{ name[3][1] }} - современная программа для составления расписания уроков для школ, лицеев и колледжей. Автоматическое составление расписания позволяет создать сложное расписание всего за считанные минуты без конфликтов</p>
+                <h2 class="main__card__text">Супер<span>Завуч</span> - программа для быстрого составления расписаний</h2>
+                <p class="main__card__subtext">СуперЗавуч - современная программа для составления расписания уроков для школ, лицеев и колледжей. Автоматическое составление расписания позволяет создать сложное расписание всего за считанные минуты без конфликтов</p>
 
                 <div class="main__card__div">
                     <div class="main__card__div__element">
@@ -121,6 +122,15 @@
                 </div>
             </div>
 
+            <div class="main__card main__card--chat">
+                <div class="chat__body" id="chatBody"></div>
+
+                <div class="chat__composer">
+                    <textarea id="chatInput" class="chat__input" rows="1" placeholder="Введите сообщение..."></textarea>
+                    <button id="chatSend" class="chat__send" disabled>Отправить</button>
+                </div>
+            </div>
+
             <div class="main__card">
                 <h2 class="main__card__text">Как это работает</h2>
                 <p class="main__card__subtext">Три шага, чтобы получить готовое расписание без конфликтов</p>
@@ -173,5 +183,7 @@
             ym(113242542, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
         </script>
         <noscript><div><img src="https://mc.yandex.ru/watch/113242542" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+        <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
     </body>
 </html>
