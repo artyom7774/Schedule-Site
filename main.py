@@ -19,13 +19,14 @@ cookies = {
     }
 }
 
-files = json.load(open("files.json", "r", encoding="utf-8"))
+BASE = os.path.dirname(os.path.abspath(__file__))
+
+files = json.load(open(os.path.join(BASE, "files.json"), "r", encoding="utf-8"))
 
 prompts = {
-    "base": open("prompts/base.txt", "r", encoding="utf-8").read(),
-    "request": open("prompts/request.txt", "r", encoding="utf-8").read()
+    "base": open(os.path.join(BASE, "prompts", "base.txt"), "r", encoding="utf-8").read(),
+    "request": open(os.path.join(BASE, "prompts", "request.txt"), "r", encoding="utf-8").read()
 }
-
 
 def write(*args):
     global log
@@ -183,7 +184,7 @@ def question(message, history=None):
 
         if "value" not in files[index]:
             if files[index]["get"][0] == "file":
-                files[index]["value"] = open(files[index]["get"][1], "r", encoding="utf-8").read()
+                files[index]["value"] = open(os.path.join(BASE, files[index]["get"][1]), "r", encoding="utf-8").read()
 
             if files[index]["get"][0] == "download":
                 files[index]["value"] = requests.get(files[index]["get"][1]).text
