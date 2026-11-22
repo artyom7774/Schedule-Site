@@ -399,4 +399,8 @@ main {
     .header__logo {
         display: none;
     }
+
+    .main__card__widget {
+        flex-warp: wrap;
+    }
 }
