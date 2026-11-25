@@ -311,6 +311,21 @@
             </div>
 
             <div class="main__card">
+                <img src="{{ url_for('static', filename='img/documentation/edit.png') }}" alt="icon" class="main__card__img">
+
+                <h2 class="main__card__text">Обработка</h2>
+                <p class="main__card__subtext">Позволяет точечно изменять расписание после генерации.</p>
+
+                 <div class="main__card__widget">
+                    <img class="main__card__widget__img" src="{{ url_for('static', filename='img/documentation/edit/edit.png') }}" alt="icon">
+                    <div class="main__card__widget__content">
+                        <div class="main__card__widget__title">Обработка</div>
+                        <p class="main__card__widget__text">Для каждого учителя и класса позволяет перемещать уроки. Также показывает все коллизии после этих изменений.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__card">
                 <img src="{{ url_for('static', filename='img/documentation/export.png') }}" alt="icon" class="main__card__img">
 
                 <h2 class="main__card__text">Экспорт</h2>
